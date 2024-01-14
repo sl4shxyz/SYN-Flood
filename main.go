@@ -14,17 +14,12 @@ import (
 )
 
 func main() {
-  if os.Args[1] == "--help" {
+  if len(os.Args) < 2 || os.Args[1] == "--help" {
     fmt.Println(config.Help())
     os.Exit(0)
   }
 
-  flags, err := config.ParseFlags()
-  if err != nil {
-    fmt.Println(err)
-    config.PrintDefaults()
-    os.Exit(1)
-  }
+  flags := config.ParseFlags()
 
   c, err := net.ListenPacket("ip4:tcp", "0.0.0.0")
   if err != nil {
