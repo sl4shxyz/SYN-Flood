@@ -1,5 +1,7 @@
 # This is a tool for sending SYN packets to a specific host
 
+Requirements: ```go version >= 1.21.5 and have administrator privileges (root)```
+
 ## Options: 
  - `--help`   Displays a help message
  - `-h`       Host for sending packages
